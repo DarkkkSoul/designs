@@ -19,40 +19,48 @@ function ImageCarousel({ images }) {
 
     useEffect(() => {
 
-        // const interval = setInterval(() => {
-        //     setImageIndex(prev => {
-        //         if (prev === images.length - 1) return 0
-        //         return prev + 1
-        //     })
-        // }, 2000);
+        const interval = setInterval(() => {
+            setImageIndex(prev => {
+                if (prev === images.length - 1) return 0
+                return prev + 1
+            })
+        }, 2000);
 
-        // return () => clearInterval(interval)
+        return () => clearInterval(interval)
     }, [images.length])
 
 
+    const PREV_IMG = (imageIndex - 1 + images.length) % images.length
+    const NEXT_IMG = (imageIndex + 1) % images.length
+
 
     return (
-        <div className='max-w-md h-[40vw] flex items-center justify-center gap-x-10'>
-            <button onClick={handlePrev}>
+        <div className='flex w-[90%]'>
+            {/* <button onClick={handlePrev}>
                 <ChevronLeft size={30} color='white' />
-            </button>
+            </button> */}
 
-            <div className='overflow-hidden w-full h-full flex'>
-                {images.map((img, index) => (
-                    <img
-                        key={index}
-                        src={img}
-                        className='w-full h-full object-cover transition-transform duration-500 ease-in-out shrink-0 grow-0'
-                        style={{
+            {/* <div className='relative w-full h-full flex items-center justify-center gap-x-5 *:transition-all *:duration-500'>
+                <img src={images[PREV_IMG]} className='w-full h-full opacity-30' />
+                <img src={images[imageIndex]} className='w-full h-full' />
+                <img src={images[NEXT_IMG]} className='w-full h-full opacity-30' />
+            </div> */}
+
+            <div className='w-full h-full flex items-center border gap-x-3' >
+                {
+                    images.map((image, index) => (
+                        <div key={index} className='w-[20vw] border h-[30vw]' style={{
                             transform: `translateX(-${imageIndex * 100}%)`
-                        }}
-                    />
-                ))}
+                        }}>
+                            <img src={image} className='w-full h-full object-cover' />
+                        </div>
+                    ))
+                }
             </div>
 
-            <button onClick={handleNext}>
+            {/* <button onClick={handleNext}>
                 <ChevronRight size={30} color='white' />
-            </button>
+            </button> */}
         </div>
     )
 }

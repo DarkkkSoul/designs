@@ -1,5 +1,5 @@
 import ImageCarousel from "../components/image-slider/ImageCarousel"
-
+import "../styles/image-slider/slider.css"
 function ImageSlider() {
     const images = [
         './image-slider/boys.jpeg',
@@ -10,8 +10,24 @@ function ImageSlider() {
         './image-slider/wednesday.jpeg',
     ]
     return (
-        <div className='w-full h-screen bg-gray-800 text-2xl flex items-center justify-center'>
-            <ImageCarousel images={images} />
+        <div className='w-[90%] mx-auto bg-gray-800 overflow-hidden flex border-4 border-red-500'>
+            <div className="flex items-center justify-center gap-[1em] group">
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">1</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">2</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">3</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">4</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">5</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">6</div>
+            </div>
+            <div className="flex items-center justify-center gap-[1em] group">
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">1</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">2</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">3</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">4</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">5</div>
+                <div className="card h-[5em] p-[1em] grow-0 shrink-0 bg-blue-300 content-center">6</div>
+            </div>
+            {/* <ImageCarousel images={images} /> */}
         </div>
     )
 }
