@@ -10,7 +10,7 @@ function ImageSlider() {
         './image-slider/wednesday.jpeg',
     ]
     return (
-        <div className='w-[90%] mx-auto bg-gray-800 overflow-hidden flex border-4 border-red-500'>
+        <div className='w-full h-screen bg-gray-800 overflow-hidden flex items-center justify-center'>
             <ImageCarousel images={images} />
         </div>
     )
