@@ -1,50 +1,63 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 function ImageCarousel({ images }) {
-  const [imageIndex, setImageIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const total = images.length;
 
+  // Auto-advance every 2 seconds (right to left)
   useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % total);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [total]);
 
-      const interval = setInterval(() => {
-          setImageIndex(prev => {
-              if (prev === images.length - 1) return 0
-              return prev + 1
-          })
-      }, 2000);
-
-      return () => clearInterval(interval)
-  }, [images.length])
+  // Helper: get previous, active, next indices (circular)
+  const getPrevIndex = () => (activeIndex - 1 + total) % total;
+  const getNextIndex = () => (activeIndex + 1) % total;
 
   return (
-    <div className="w-full flex justify-center overflow-hidden">
+    <div className="relative w-full flex justify-center items-center overflow-visible z-10">
 
-      {/* VIEWPORT */}
-      <div className="w-[62%] overflow-hidden">
+      {/* Carousel container - visible area */}
+      <div className="flex justify-center items-center gap-2 w-full max-w-5xl mx-auto">
 
-        {/* TRACK */}
+        {/* Previous image */}
         <div
-          className="flex gap-x-1 transition-transform duration-300"
-          style={{
-            transform: `translateX(-${imageIndex * 20}vw)`
-          }}
+          className="transition-all duration-500 ease-out flex-none w-100 scale-70 opacity-60 z-50"
         >
-          {[...images, ...images].map((image, index) => (
-            <div
-              key={index}
-              className="shrink-0 w-[20vw] h-[20vw]"
-            >
-              <img
-                src={image}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          <img
+            src={images[getPrevIndex()]}
+            className="w-full h-auto object-cover rounded-lg"
+            alt="previous"
+          />
+        </div>
+
+        {/* Active (current) image */}
+        <div
+          className="transition-all w-75 scale-[1.3] duration-500 ease-out flex-none basis-auto shrink-0 grow-0 opacity-100 z-50"
+        >
+          <img
+            src={images[activeIndex]}
+            className="w-full h-auto object-cover rounded-lg shadow-2xl"
+            alt="active"
+          />
+        </div>
+
+        {/* Next image */}
+        <div
+          className="transition-all duration-500 ease-out flex-none w-100 scale-70 opacity-60 z-50"
+        >
+          <img
+            src={images[getNextIndex()]}
+            className="w-full h-auto object-cover rounded-lg"
+            alt="next"
+          />
         </div>
 
       </div>
     </div>
-  )
+  );
 }
 
-export default ImageCarousel
+export default ImageCarousel;
