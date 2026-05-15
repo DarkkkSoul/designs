@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import ImageSlider from "./pages/ImageSlider";
 import Icons from "./pages/Icons";
 import AppleDesigns from "./pages/AppleDesigns";
+import "./index.css"
 
 function App() {
   return (
