@@ -5,6 +5,7 @@ function Home() {
     <div>
         <Link to="/image-slider">Image Slider</Link>
         <Link to="/icons">Icons</Link>
+        <Link to="/apple-designs">Apple Designs</Link>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import ImageSlider from "./pages/ImageSlider";
 import Icons from "./pages/Icons";
+import AppleDesigns from "./pages/AppleDesigns";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/image-slider" element={<ImageSlider />} />
       <Route path="/icons" element={<Icons />} />
+      <Route path="/apple-designs" element={<AppleDesigns />} />
     </Routes>
   )
 }

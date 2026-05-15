@@ -1,7 +1,7 @@
-.group {
+/* .group {
     animation: slide 5s infinite linear;
     padding-right: 1em;
-}
+} */
 
 @keyframes slide {
     0% {
