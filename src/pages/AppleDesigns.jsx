@@ -3,7 +3,7 @@ import Slider from '../components/apple-designs/Slider'
 
 function AppleDesigns() {
     return (
-        <div>
+        <div className=''>
             <Slider />
         </div>
     )
