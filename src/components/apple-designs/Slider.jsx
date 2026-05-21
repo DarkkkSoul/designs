@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { CircleX } from "lucide-react";
+import { useEffect, useState } from "react";
 
 function Slider() {
 
@@ -42,6 +43,18 @@ function Slider() {
         }
     ]
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [isOpen]);
+
     const startendInset =
         "pl-[max(1rem,calc((100vw-73rem)/2+1rem))] " +
         "pr-[max(1rem,calc((100vw-73rem)/2+1rem))] " +
@@ -51,11 +64,11 @@ function Slider() {
         <div className='w-full overflow-hidden py-30 space-y-10'>
 
             {isOpen && (
-                <div className="fixed inset-0 bg-black/30 backdrop-blur-lg z-50 size-full">
-                    <div className="bg-white rounded-3xl w-[80vw] h-[200vh] mx-auto mt-10">
-                        <div className="bg-black text-white size-13 absolute right-45 top-15 rounded-full flex z-20 justify-center items-center">
-                            <Icon />
-                        </div>
+                <div className="overflow-y-auto fixed inset-0 bg-black/30 backdrop-blur-lg duration-200 transition-opacity z-50 size-full">
+                    <div className="bg-white relative rounded-3xl w-[80vw] min-h-[200vh] mx-auto mt-10 transition-all duration-300 delay-150">
+                        <button onClick={() => setIsOpen(false)} className="cursor-pointer absolute right-6 top-5 rounded-full flex z-20">
+                            <CircleX size={45} fill="black" stroke="white" strokeWidth={2}/>
+                        </button>
                     </div>
                 </div>
             )}
