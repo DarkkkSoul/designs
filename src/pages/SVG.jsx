@@ -5,6 +5,7 @@ function SVG() {
         <div>
             <svg height="200" width="200"
                 viewBox='0 0 100 100' stroke='red'>
+                <rect height="100" width="100" x="0" y="0" fill='none' stroke='black' stroke-width="1" />
                 <circle
                     r="25"
                     cx="50"
@@ -42,6 +43,48 @@ function SVG() {
                     stroke-width="6"
                 />
             </svg>
+
+            <svg width="200" height="200" viewBox="-15 -15 70 70">
+                <rect height="30" width="30" x="-15" y="-15"
+                    fill='none' stroke='black' stroke-width="1" />
+                <circle r="6" />
+                <path d='M 0, 8 L 0, 13'
+                    stroke='black'
+                    stroke-width="2"
+                    strokeLinecap='round'
+                    id='ray'
+                />
+                <use href='#ray' transform='rotate(45)' />
+                <use href='#ray' transform='rotate(90)' />
+                <use href='#ray' transform='rotate(135)' />
+                <use href='#ray' transform='rotate(180)' />
+                <use href='#ray' transform='rotate(225)' />
+                <use href='#ray' transform='rotate(270)' />
+                <use href='#ray' transform='rotate(315)' />
+            </svg>
+
+
+            <svg width="200" height="200">
+                <path
+                    d='
+                        M 50, 50 Q 75 25, 100 50
+                    '
+                    stroke='black'
+                />
+            </svg>
+
+            <svg width="450" height="450">
+                <rect width="450" height="450" fill='none' stroke-width="2" stroke='black' />
+                <path
+                    d='
+                        M 100 350 C 100 300, 300 300, 350 350
+                    '
+                    stroke='black'
+                    stroke-width='3'
+                    fill='none'
+                />
+            </svg>
+
         </div>
     )
 }
