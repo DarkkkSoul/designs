@@ -7,6 +7,7 @@ function Home() {
       <Link to="/icons">Icons</Link>
       <Link to="/apple-designs">Apple Designs</Link>
       <Link to="/svg">SVG</Link>
+      <Link to="/antigravity">Antigravity</Link>
     </div>
   )
 }
