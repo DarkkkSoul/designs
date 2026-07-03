@@ -21,22 +21,22 @@ function SVG() {
     const TARGET = isPlaying ? PAUSE : PLAY
     useGSAP(() => {
 
-        const TARGETLEFT = isPlaying? PAUSE.LEFT : PLAY.LEFT
-        const TARGETRIGHT = isPlaying? PAUSE.RIGHT : PLAY.RIGHT
+        const TARGETLEFT = isPlaying ? PAUSE.LEFT : PLAY.LEFT
+        const TARGETRIGHT = isPlaying ? PAUSE.RIGHT : PLAY.RIGHT
 
         gsap.to("#left", {
             duration: 0.4,
-            ease:"power1.inOut",
+            ease: "power1.inOut",
             morphSVG: {
-                shape:TARGETLEFT,
+                shape: TARGETLEFT,
                 shapeIndex: "auto"
             }
         })
         gsap.to("#right", {
             duration: 0.4,
-            ease:"power1.inOut",
+            ease: "power1.inOut",
             morphSVG: {
-                shape:TARGETRIGHT,
+                shape: TARGETRIGHT,
                 shapeIndex: "auto"
             }
         })
@@ -130,6 +130,7 @@ function SVG() {
 
         // </div>
         <div className='grid grid-cols-5 p-20'>
+
             <div className='flex flex-col items-center justify-center'>
                 <h2 className='text-3xl font-bold tracking-wide'>Bell</h2>
                 <svg width="200" height="200" viewBox="0 0 120 100">
@@ -148,11 +149,39 @@ function SVG() {
                     className='cursor-pointer'
                     onClick={() => setIsPlaying((prev) => !prev)}>
                     <svg width="200" height="200" viewBox="0 0 120 100">
-                        <path id='left' d={PLAY.LEFT} fill="currentColor"/>
-                        <path id='right' d={PLAY.RIGHT} fill="currentColor"/>
+                        <path id='left' d={PLAY.LEFT} fill="currentColor" />
+                        <path id='right' d={PLAY.RIGHT} fill="currentColor" />
                     </svg>
                 </button>
             </div>
+
+            <div>
+                <svg width="300" height="200" viewBox="0 0 200 200">
+
+                    <path
+                        d='M 70,170 L 210,170 L 140,90Z'
+                        fill='#234236'
+                        stroke='#234236'
+                        stroke-width="1"
+                    />
+                    <path
+                        d='M 80,140 L 200,140 L 140,70Z'
+                        fill='#0C5C4C'
+                        stroke='#0C5C4C'
+                        stroke-width="1"
+                    />
+                    <path
+                        d='M 90,110 L 190,110 L 140,40Z'
+                        fill='#38755B'
+                        stroke='#38755B'
+                        stroke-width="1"
+                    />
+                    <rect width='30' height='20' fill='#A52A2A'x='125' y='170'/>
+
+                </svg>
+            </div>
+
+
         </div>
     )
 }

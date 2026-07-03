@@ -1,6 +1,8 @@
 function FolderIcon() {
     return (
-        <div className='flex items-center justify-center w-80 h-80 perspective-[400px] bg-blue-200'>
+        <div className='flex items-center justify-center w-80 h-80 perspective-[400px] relative'>
+
+            <div className="w-45 h-45 rounded-full absolute bg-white blur-2xl" />
 
             {/* 👇 parent gets group */}
             <div className='relative w-44 h-36 transform-3d group'>
