@@ -5,8 +5,8 @@ import Stack from '../components/icons/Stack'
 
 function Icons() {
     return (
-        <div className='bg-[#282828] min-h-screen w-full py-5 px-5'>
-            <div className='grid grid-cols-4 min-h-screen w-full'>
+        <div className='bg-[#282828] min-h-screen w-full py-5 px-5 '>
+            <div className='grid grid-cols-3 min-h-screen w-full'>
                 <FolderIcon />
                 <Stack />
                 <Cube />
