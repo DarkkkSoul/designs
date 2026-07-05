@@ -184,13 +184,13 @@ function SVG() {
             <div>
                 <svg width="300" height="200" viewBox="0 0 200 200">
                     <defs>
-                        <linearGradient id='lg' x1="0%" x2="100%" y1="0%" y2="100%">
+                        <radialGradient id='lg' cx="50%" cy="50%" fx="50%" fy="50%">
                             <stop stopColor='black' offset="0%" />
                             <stop stopColor='blue' offset="100%" />
                             {/* <stop stopColor='white' offset="100%" /> */}
-                        </linearGradient>
+                        </radialGradient>
                     </defs>
-                    <circle r='32' cx="58" cy="50" fill='url(#lg)' />
+                    <circle r='70' cx="40" cy="100" fill='url(#lg)' />
                 </svg>
             </div>
 
