@@ -55,7 +55,7 @@ function Card() {
                     ref={imgRef}
 
                 >
-                    <img src="/icons/card.jpg" className='rounded-xl border-2 border-white/70 shadow-[0px_0px_8px] shadow-pink-300' />
+                    <img src="/icons/card.jpg" className='rounded-xl border-2 border-white/70 shadow-[0px_0px_10px] shadow-pink-300' />
                 </div>
                 <div ref={flowerRef} className='absolute right-18 bottom-15 z-2'>
                     <Flower stroke-width="1" size={45} stroke='pink' opacity={0.8} />

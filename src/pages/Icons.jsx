@@ -1,6 +1,7 @@
 import Card from '../components/icons/Card'
 import Cube from '../components/icons/Cube'
 import FolderIcon from '../components/icons/FolderIcon'
+import Radar from '../components/icons/Radar'
 import Stack from '../components/icons/Stack'
 
 function Icons() {
@@ -11,6 +12,7 @@ function Icons() {
                 <Stack />
                 <Cube />
                 <Card />
+                <Radar />
             </div>
         </div>
     )
