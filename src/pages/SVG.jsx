@@ -129,7 +129,7 @@ function SVG() {
         //     </svg>
 
         // </div>
-        <div className='grid grid-cols-5 p-20'>
+        <div className='grid grid-cols-2 py-8'>
 
             <div className='flex flex-col items-center justify-center'>
                 <h2 className='text-3xl font-bold tracking-wide'>Bell</h2>
@@ -176,8 +176,21 @@ function SVG() {
                         stroke='#38755B'
                         stroke-width="1"
                     />
-                    <rect width='30' height='20' fill='#A52A2A'x='125' y='170'/>
+                    <rect width='30' height='20' fill='#A52A2A' x='125' y='170' />
 
+                </svg>
+            </div>
+
+            <div>
+                <svg width="300" height="200" viewBox="0 0 200 200">
+                    <defs>
+                        <linearGradient id='lg' x1="0%" x2="100%" y1="0%" y2="100%">
+                            <stop stopColor='black' offset="0%" />
+                            <stop stopColor='blue' offset="100%" />
+                            {/* <stop stopColor='white' offset="100%" /> */}
+                        </linearGradient>
+                    </defs>
+                    <circle r='32' cx="58" cy="50" fill='url(#lg)' />
                 </svg>
             </div>
 
