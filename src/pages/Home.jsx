@@ -8,6 +8,8 @@ function Home() {
       <Link to="/apple-designs">Apple Designs</Link>
       <Link to="/svg">SVG</Link>
       <Link to="/antigravity">Antigravity</Link>
+      <Link to="/playground">Playground</Link>
+      <Link to="/cursor">Cursor</Link>
     </div>
   )
 }

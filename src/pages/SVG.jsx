@@ -193,7 +193,7 @@ function SVG() {
                     <circle r='70' cx="40" cy="100" fill='url(#lg)' />
                 </svg>
             </div>
-
+            
 
         </div>
     )
