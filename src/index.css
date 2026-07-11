@@ -7,3 +7,40 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.btn-grad {
+  --angle: 0deg;
+  @apply p-0.5 rounded-lg transition-all cursor-pointer;
+}
+
+.btn-grad:hover {
+  background: conic-gradient(from var(--angle),
+      #7c3aed,
+      #bef264,
+      #7c3aed);
+}
+
+.btn-grad {
+  position: relative;
+}
+
+.btn-grad::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from var(--angle),
+    #7c3aed,
+    #bef264,
+    #7c3aed
+  );
+
+  filter: blur(20px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+
+.span-grad {
+  @apply block bg-black/90 rounded-md px-4.5 py-2.5;
+}
