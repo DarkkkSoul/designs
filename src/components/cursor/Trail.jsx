@@ -22,7 +22,7 @@ function Trail() {
                 duration: 0.3 + i * 0.05,
                 scale: (i - 5) / 5,
                 scale: 1 - i / circles.length,
-                ease: "linear",
+                ease: "power2.out",
                 overwrite: "auto"
             })
         });
@@ -32,8 +32,8 @@ function Trail() {
         <div className='font-serif items-center justify-center flex w-full h-full text-3xl text-white/80 uppercase'
             ref={container}
             onMouseMove={handleMove}
-        onMouseEnter={() => { gsap.to(".cursorRef", { autoAlpha: 1, scale: 1 }) }}
-        onMouseLeave={() => { gsap.to(".cursorRef", { autoAlpha: 0, scale: 0 }) }}
+            onMouseEnter={() => { gsap.to(".cursorRef", { autoAlpha: 1, scale: 1 }) }}
+            onMouseLeave={() => { gsap.to(".cursorRef", { autoAlpha: 0, scale: 0 }) }}
         >
             <p>Trail</p>
             <div className='cursorRef ' />
