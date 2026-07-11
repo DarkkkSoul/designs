@@ -7,7 +7,7 @@
   font-weight: 400;
   font-style: normal;
 }
-
+/* BUTTON BORDER GRADIENT */
 .btn-grad {
   --angle: 0deg;
   @apply p-0.5 rounded-lg transition-all cursor-pointer;
@@ -40,7 +40,12 @@
   z-index: -1;
 }
 
-
 .span-grad {
   @apply block bg-black/90 rounded-md px-4.5 py-2.5;
+}
+
+
+/* TRAIL */
+.cursorRef {    
+  @apply size-7 bg-white rounded-full absolute top-0 left-132.5 pointer-events-none z-10;
 }
