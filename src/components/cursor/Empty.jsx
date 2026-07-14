@@ -1,8 +1,6 @@
-import React from 'react'
-
 function Empty() {
     return (
-        <div></div>
+        <div className='col-span-2 row-span-2'></div>
     )
 }
 

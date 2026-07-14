@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 function Trail() {
     const container = React.useRef(null)
@@ -29,7 +29,7 @@ function Trail() {
 
     })
     return (
-        <div className='font-serif items-center justify-center flex w-full h-full text-3xl text-white/80 uppercase'
+        <div className='font-serif items-center row-span-2 justify-center flex w-full h-full text-3xl text-white/80 uppercase col-span-2'
             ref={container}
             onMouseMove={handleMove}
             onMouseEnter={() => { gsap.to(".cursorRef", { autoAlpha: 1, scale: 1 }) }}

@@ -23,7 +23,7 @@ function Simple() {
     })
 
     return (
-        <div className='relative h-full w-full flex items-center justify-center' ref={container}
+        <div className='relative col-span-2 row-span-2 h-full w-full flex items-center justify-center' ref={container}
         onMouseMove={handleMove}
         onMouseEnter={()=>{gsap.to(cursorRef.current,{autoAlpha:1, scale:1})}}
         onMouseLeave={()=>{gsap.to(cursorRef.current,{autoAlpha:0, scale:0})}}
