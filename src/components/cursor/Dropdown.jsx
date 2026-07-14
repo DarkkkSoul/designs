@@ -80,7 +80,7 @@ function Dropdown() {
             <div className='flex flex-col items-center justify-center w-full h-full space-y-1'>
                 {CONTENT.map((item) => (
                     <button
-                        className='bg-[#f2efef] w-full max-w-[21rem] px-3.5 pr-4 py-3 rounded-xl'
+                        className='bg-[#f2efef] cursor-pointer w-full max-w-[21rem] px-3.5 pr-4 py-3 rounded-xl'
                         key={item.id}
                         onClick={() => toggleDropdown(item.id)}>
 
