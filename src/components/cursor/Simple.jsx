@@ -28,7 +28,7 @@ function Simple() {
         onMouseEnter={()=>{gsap.to(cursorRef.current,{autoAlpha:1, scale:1})}}
         onMouseLeave={()=>{gsap.to(cursorRef.current,{autoAlpha:0, scale:0})}}
         >
-            <h2 className='text-3xl text-white/80 uppercase font-serif'>Simple</h2>
+            <h2 className='text-2xl text-white/80 text-center uppercase font-serif'>Simple Cursor <br />Animation</h2>
             <div
                 ref={cursorRef}
                 className='size-7 bg-white rounded-full absolute top-0 left-0 pointer-events-none z-10 mix-blend-difference' />

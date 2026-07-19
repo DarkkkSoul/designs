@@ -29,13 +29,13 @@ function Trail() {
 
     })
     return (
-        <div className='font-serif items-center row-span-2 justify-center flex w-full h-full text-3xl text-white/80 uppercase col-span-2'
+        <div className='font-serif items-center row-span-2 justify-center flex w-full h-full text-2xl text-white/80 uppercase col-span-2'
             ref={container}
             onMouseMove={handleMove}
             onMouseEnter={() => { gsap.to(".cursorRef", { autoAlpha: 1, scale: 1 }) }}
             onMouseLeave={() => { gsap.to(".cursorRef", { autoAlpha: 0, scale: 0 }) }}
         >
-            <p>Trail</p>
+            <p className='text-center'>Trail Cursor <br />Animation</p>
             <div className='cursorRef ' />
             <div className='cursorRef ' />
             <div className='cursorRef ' />

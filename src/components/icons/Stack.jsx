@@ -2,7 +2,7 @@ import React from 'react'
 
 function Stack() {
     return (
-        <div className='flex items-center justify-center perspective-[1000px] relative w-80 h-80 bg-[#282828]'>
+        <div className='flex items-center justify-center perspective-[1000px] relative row-span-3 col-span-2 bg-[#282828]'>
             <div className='bg-purple-300 size-50 blur-2xl rounded-full absolute' />
             <div className='relative transform-3d w-50 h-50 rotate-z-43 rotate-x-65'>
                 {/* top & btm  */}

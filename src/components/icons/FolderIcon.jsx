@@ -1,6 +1,6 @@
 function FolderIcon() {
     return (
-        <div className='flex items-center justify-center w-80 h-80 perspective-[400px] relative'>
+        <div className='flex items-center justify-center col-span-2 row-span-2 perspective-[400px] relative'>
 
             <div className="w-45 h-45 rounded-full absolute bg-white blur-2xl" />
 

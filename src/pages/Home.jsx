@@ -27,12 +27,6 @@ function Home() {
 
         <button className='btn-grad'>
           <span className='span-grad'>
-            <Link to="/icons">Icons</Link>
-          </span>
-        </button>
-
-        <button className='btn-grad'>
-          <span className='span-grad'>
             <Link to="/apple-designs">Apple Designs</Link>
           </span>
         </button>

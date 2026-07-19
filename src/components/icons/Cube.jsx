@@ -13,8 +13,8 @@ function Cube() {
 
 
     return (
-        <div className='flex items-center perspective-[1000px] relative justify-center w-80 h-80 bg-[#282828]'>
-            
+        <div className='flex items-center perspective-[1000px] relative justify-center row-span-3 col-span-2 bg-[#282828]'>
+
             <div className='bg-white size-48 blur-2xl rounded-full absolute' />
 
             <div id='cube' className='w-40 h-40 relative rotate-y-25 rotate-x-20 transform-3d'>

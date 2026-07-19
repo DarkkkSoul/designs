@@ -66,7 +66,7 @@ function Radar() {
     })
 
     return (
-        <div className='size-80 flex items-center justify-center relative'>
+        <div className='row-span-2 col-span-2 flex items-center justify-center relative'>
             <div className='relative flex items-center justify-center'>
                 <div className='size-60 rounded-full bg-[#1c1d1d] shadow-[inset_0_0_5px_1px_#b2acab77] absolute' />
                 <div className='size-40 rounded-full bg-[#1c1d1d] shadow-[inset_0_0_5px_1px_#b2acab77] absolute' />
