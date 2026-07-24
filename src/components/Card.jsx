@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { Flower } from 'lucide-react'
 import React, { useRef } from 'react'
 
-function Card() {
+function Card({ githubUrl }) {
 
     const imgRef = useRef(null)
     const container = useRef(null)
@@ -44,7 +44,17 @@ function Card() {
     }
 
     return (
-        <div className='size-80 flex items-end justify-center'>
+        <div className='size-80 flex items-end justify-center relative'>
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 text-white/60 hover:text-white transition-colors"
+                >
+                    <img src="/code.png" className="size-5" />
+                </a>
+            )}
             <div
                 onMouseEnter={animateUp}
                 onMouseLeave={animateDown}

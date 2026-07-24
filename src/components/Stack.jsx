@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React, { useRef } from 'react'
 
-function Stack() {
+function Stack({ githubUrl }) {
     const stackRef = useRef(null)
     const topRef = useRef(null)
     const leftRef = useRef(null)
@@ -14,18 +14,18 @@ function Stack() {
     const handleEnter = contextSafe(() => {
         gsap.to(topRef.current, {
             duration: 0.2,
-            z: 48-2,
-            ease:"power1.inOut"
+            z: 48 - 2,
+            ease: "power1.inOut"
         })
         gsap.to(leftRef.current, {
             duration: 0.2,
-            y: 196-2,
-            ease:"power1.inOut"
+            y: 196 - 2,
+            ease: "power1.inOut"
         })
         gsap.to(frontRef.current, {
             duration: 0.2,
-            x: 128-2,
-            ease:"power1.inOut"
+            x: 128 - 2,
+            ease: "power1.inOut"
         })
     })
 
@@ -33,17 +33,17 @@ function Stack() {
         gsap.to(topRef.current, {
             duration: 0.2,
             z: 20,
-            ease:"power1.inOut"
+            ease: "power1.inOut"
         })
         gsap.to(leftRef.current, {
             duration: 0.2,
             y: 180,
-            ease:"power1.inOut"
+            ease: "power1.inOut"
         })
         gsap.to(frontRef.current, {
             duration: 0.2,
             x: 100,
-            ease:"power1.inOut"
+            ease: "power1.inOut"
         })
     })
 
@@ -51,6 +51,16 @@ function Stack() {
         <div className='flex items-center justify-center perspective-[1000px] relative row-span-3 col-span-2'
             ref={stackRef}
         >
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 text-white/60 hover:text-white transition-colors"
+                >
+                    <img src="/code.png" className="size-5" />
+                </a>
+            )}
             <div className='size-50 blur-2xl rounded-full absolute' />
             <div
                 onMouseEnter={handleEnter}

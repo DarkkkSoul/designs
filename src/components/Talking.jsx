@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef } from "react"
 
-function Talking() {
+function Talking({ githubUrl }) {
     const IMAGES = [
         "https://imgs.search.brave.com/yH9o949A4U8-vFbI5qgIy24Z86a1pDMK62rARTscIDo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMDYv/NTQxLzE4OC9zbWFs/bC9iZWFyZGVkLW1h/bGUtY2FydG9vbi1j/aGFyYWN0ZXItd2l0/aC1zdW5nbGFzc2Vz/LW1pbmltYWxpc3Qt/Y2FydG9vbi1hdmF0/YXItcHJvZmlsZS1p/bGx1c3RyYXRpb24t/ZnJlZS12ZWN0b3Iu/anBn",
         "https://imgs.search.brave.com/PYl7cw3H7hGfK2kXB0T4je-YRoQsCPLJwJNAZ7KNvjk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjEv/NzcyLzI0My9zbWFs/bC9wb3J0cmFpdC1v/Zi1hLWhhbmRzb21l/LW1hbi1mYWNlLXNp/ZGUtdmlldy1ibG9u/ZGUtYmVhcmRlZC1w/b255dGFpbC1oYWly/LWF2YXRhci1mb3It/c29jaWFsLW1lZGlh/LWNvbG9yZWQtZm9y/LXByb2ZpbGUtdGVt/cGxhdGUtcHJpbnQt/c3RpY2tlci1wb3N0/ZXItZXRjLWZsYXQt/aWxsdXN0cmF0aW9u/LXZlY3Rvci5qcGc",
@@ -24,7 +24,7 @@ function Talking() {
         gsap.to(boxRef.current, {
             duration: 3,
             height: "13.5rem",
-            borderRadius:0,
+            borderRadius: 0,
             borderBottomLeftRadius: 6,
             borderBottomRightRadius: 6,
         })
@@ -36,7 +36,7 @@ function Talking() {
             y: -17,
             // opacity: 0,
             duration: 0.7,
-            visibility:"hidden"
+            visibility: "hidden"
         })
         gsap.to(headerRef.current, {
             visibility: "visible",
@@ -45,7 +45,17 @@ function Talking() {
     })
 
     return (
-        <div className='text-white/80 col-span-2 row-span-3 flex items-center justify-center' ref={container}>
+        <div className='relative text-white/80 col-span-2 row-span-3 flex items-center justify-center' ref={container}>
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 text-white/60 hover:text-white transition-colors"
+                >
+                    <img src="/code.png" className="size-5" />
+                </a>
+            )}
             <div
                 ref={boxRef}
                 className='rounded-full w-65 h-16 bg-gray-200 flex items-center justify-between px-3 pr-5'>

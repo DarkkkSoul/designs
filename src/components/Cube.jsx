@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 import { Draggable } from 'gsap/all';
 
-function Cube() {
+function Cube({ githubUrl }) {
     // gsap.registerPlugin(Draggable)
 
     // gsap.to("#cube", {
@@ -14,6 +14,16 @@ function Cube() {
 
     return (
         <div className='flex items-center perspective-[1000px] relative justify-center row-span-3 col-span-2 bg-[#282828]'>
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 text-white/60 hover:text-white transition-colors"
+                >
+                    <img src="/code.png" className="size-5" />
+                </a>
+            )}
 
             <div className='bg-white size-48 blur-2xl rounded-full absolute' />
 

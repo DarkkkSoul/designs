@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React, { useRef, useState } from 'react'
 
-function Dropdown() {
+function Dropdown({ githubUrl }) {
 
     const CONTENT = [
         {
@@ -75,7 +75,17 @@ function Dropdown() {
 
 
     return (
-        <div className='text-white/80 col-span-2 row-span-3'>
+        <div className='relative text-white/80 col-span-2 row-span-3'>
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 text-white/60 hover:text-white transition-colors"
+                >
+                    <img src="/code.png" className="size-5" />
+                </a>
+            )}
 
             <div className='flex flex-col items-center justify-center w-full h-full space-y-1'>
                 {CONTENT.map((item) => (

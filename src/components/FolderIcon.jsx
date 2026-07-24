@@ -1,6 +1,16 @@
-function FolderIcon() {
+function FolderIcon({ githubUrl }) {
     return (
         <div className='flex items-center justify-center col-span-2 row-span-2 perspective-[400px] relative'>
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 text-white/60 hover:text-white transition-colors"
+                >
+                    <img src="/code.png" className="size-5" />
+                </a>
+            )}
 
             <div className="w-45 h-45 rounded-full absolute bg-white blur-2xl" />
 

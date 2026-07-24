@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React from 'react'
 
-function Trail() {
+function Trail({ githubUrl }) {
     const container = React.useRef(null)
 
     gsap.registerPlugin(useGSAP)
@@ -29,12 +29,22 @@ function Trail() {
 
     })
     return (
-        <div className='font-serif items-center row-span-2 justify-center flex w-full h-full text-2xl text-white/80 uppercase col-span-2'
+        <div className='relative font-serif items-center row-span-2 justify-center flex w-full h-full text-2xl text-white/80 uppercase col-span-2'
             ref={container}
             onMouseMove={handleMove}
             onMouseEnter={() => { gsap.to(".cursorRef", { autoAlpha: 1, scale: 1 }) }}
             onMouseLeave={() => { gsap.to(".cursorRef", { autoAlpha: 0, scale: 0 }) }}
         >
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 text-white/60 hover:text-white transition-colors"
+                >
+                    <img src="/code.png" className="size-5" />
+                </a>
+            )}
             <p className='text-center'>Trail Cursor <br />Animation</p>
             <div className='cursorRef ' />
             <div className='cursorRef ' />

@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef } from "react"
 
-function Radar() {
+function Radar({ githubUrl }) {
 
     const lineRef = useRef(null)
     const c1Ref = useRef(null)
@@ -58,15 +58,25 @@ function Radar() {
             attr: {
                 r: 30
             },
-            duration:2,
-            repeat:-1,
-            ease:"linear",
-            opacity:0.1
+            duration: 2,
+            repeat: -1,
+            ease: "linear",
+            opacity: 0.1
         })
     })
 
     return (
         <div className='row-span-2 col-span-2 flex items-center justify-center relative'>
+            {githubUrl && (
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 text-white/60 hover:text-white transition-colors"
+                >
+                    <img src="/code.png" className="size-5" />
+                </a>
+            )}
             <div className='relative flex items-center justify-center'>
                 <div className='size-60 rounded-full bg-[#1c1d1d] shadow-[inset_0_0_5px_1px_#b2acab77] absolute' />
                 <div className='size-40 rounded-full bg-[#1c1d1d] shadow-[inset_0_0_5px_1px_#b2acab77] absolute' />
