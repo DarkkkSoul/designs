@@ -14,7 +14,7 @@ function Trail({ githubUrl }) {
         let x = clientX - rect.left
         let y = clientY - rect.top
 
-        const circles = gsap.utils.toArray(".cursorRef")
+        const circles = container.current.querySelectorAll(".cursorRef")
         circles.forEach((c, i) => {
             gsap.to(c, {
                 x: x - 14,
@@ -32,8 +32,8 @@ function Trail({ githubUrl }) {
         <div className='relative font-serif items-center row-span-2 justify-center flex w-full h-full text-2xl text-white/80 uppercase col-span-2'
             ref={container}
             onMouseMove={handleMove}
-            onMouseEnter={() => { gsap.to(".cursorRef", { autoAlpha: 1, scale: 1 }) }}
-            onMouseLeave={() => { gsap.to(".cursorRef", { autoAlpha: 0, scale: 0 }) }}
+            onMouseEnter={() => { gsap.to(container.current.querySelectorAll(".cursorRef"), { autoAlpha: 1, scale: 1 }) }}
+            onMouseLeave={() => { gsap.to(container.current.querySelectorAll(".cursorRef"), { autoAlpha: 0, scale: 0 }) }}
         >
             {githubUrl && (
                 <a
@@ -46,16 +46,16 @@ function Trail({ githubUrl }) {
                 </a>
             )}
             <p className='text-center'>Trail Cursor <br />Animation</p>
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
-            <div className='cursorRef ' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
+            <div className='cursorRef absolute top-0 left-0' />
         </div>
     )
 }

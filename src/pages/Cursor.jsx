@@ -10,15 +10,15 @@ import Radar from '../components/Radar'
 import Stack from '../components/Stack'
 
 const designs = [
-    { component: Simple, githubUrl: 'https://github.com/you/repo/blob/main/Simple.tsx' },
-    { component: Trail, githubUrl: 'https://github.com/you/repo/blob/main/Trail.tsx' },
-    { component: Talking, githubUrl: 'https://github.com/you/repo/blob/main/Talking.tsx' },
-    { component: Dropdown, githubUrl: 'https://github.com/you/repo/blob/main/Dropdown.tsx' },
-    { component: FolderIcon, githubUrl: 'https://github.com/you/repo/blob/main/FolderIcon.tsx' },
-    { component: Stack, githubUrl: 'https://github.com/you/repo/blob/main/Stack.tsx' },
-    // { component: Card, githubUrl: '...' },
-    { component: Radar, githubUrl: 'https://github.com/you/repo/blob/main/Radar.tsx' },
-    { component: Cube, githubUrl: 'https://github.com/you/repo/blob/main/Cube.tsx' },
+    { component: Simple, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/Simple.jsx' },
+    { component: Trail, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/Trail.jsx' },
+    { component: Talking, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/Talking.jsx' },
+    { component: Dropdown, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/Dropdown.jsx' },
+    { component: FolderIcon, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/FolderIcon.jsx' },
+    { component: Stack, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/Stack.jsx' },
+    // { component: Card, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/Card.jsx },
+    { component: Radar, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/Radar.jsx' },
+    { component: Cube, githubUrl: 'https://github.com/DarkkkSoul/designs/blob/main/src/components/Cube.jsx' },
     { component: Empty, githubUrl: null },
     { component: Empty, githubUrl: null },
 ]
